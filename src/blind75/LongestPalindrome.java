@@ -50,23 +50,23 @@ public class LongestPalindrome {
 
 //Optimized version:
 
-class Solution {
-    public int longestPalindrome(String s) {
-        Map<Character, Integer> map = new HashMap<>();
-        for (char c : s.toCharArray()) {
-            map.put(c, map.getOrDefault(c, 0) + 1);
-        }
-
-        int maxLength = 0;
-        boolean hasOdd = false;
-        for (int count : map.values()) {
-            if (count % 2 == 0) {
-                maxLength += count;
-            } else {
-                maxLength += count - 1;
-                hasOdd = true;
-            }
-        }
-        return hasOdd ? maxLength + 1 : maxLength;
-    }
-}
+// class Solution {
+//    public int longestPalindrome(String s) {
+//        Map<Character, Integer> map = new HashMap<>();
+//        for (char c : s.toCharArray()) {
+//            map.put(c, map.getOrDefault(c, 0) + 1);
+//        }
+//
+//        int maxLength = 0;
+//        boolean hasOdd = false;
+//        for (int count : map.values()) {
+//            if (count % 2 == 0) {
+//                maxLength += count;
+//            } else {
+//                maxLength += count - 1;
+//                hasOdd = true;
+//            }
+//        }
+//        return hasOdd ? maxLength + 1 : maxLength;
+//    }
+//}
